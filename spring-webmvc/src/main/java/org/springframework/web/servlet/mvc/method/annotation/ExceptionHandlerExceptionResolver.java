@@ -458,6 +458,7 @@ public class ExceptionHandlerExceptionResolver extends AbstractHandlerMethodExce
 			handlerType = handlerMethod.getBeanType();
 			ExceptionHandlerMethodResolver resolver = this.exceptionHandlerCache.get(handlerType);
 			if (resolver == null) {
+				//在这里建立异常和method的映射关系
 				resolver = new ExceptionHandlerMethodResolver(handlerType);
 				this.exceptionHandlerCache.put(handlerType, resolver);
 			}
